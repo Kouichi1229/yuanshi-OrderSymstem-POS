@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6620FFA5-57BA-4F9C-B807-A3E2E612C203}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OrderSystem</RootNamespace>
+    <AssemblyName>OrderSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>systemIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph">
+      <HintPath>..\..\0529\PD2018S_A104221219\A104221219Library\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="data.cs" />
+    <Compile Include="dataIo.cs" />
+    <Compile Include="MainEntrace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainEntrace.Designer.cs">
+      <DependentUpon>MainEntrace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ordering_v2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ordering_v2.Designer.cs">
+      <DependentUpon>ordering_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerformanceManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerformanceManagement.Designer.cs">
+      <DependentUpon>PerformanceManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemManagement.Designer.cs">
+      <DependentUpon>SystemManagement.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainEntrace.resx">
+      <DependentUpon>MainEntrace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ordering_v2.resx">
+      <DependentUpon>ordering_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerformanceManagement.resx">
+      <DependentUpon>PerformanceManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SystemManagement.resx">
+      <DependentUpon>SystemManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\ZedGraph.ArrowObj+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ArrowObj.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Axis+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Axis+ScaleFormatHandler.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Axis+ScaleTitleEventHandler.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Axis.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.AxisLabel.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Bar+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Bar.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.BarItem.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.BarSettings+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.BarSettings.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.BasicArrayPointList.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Border+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Border.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.BoxObj+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.BoxObj.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Chart+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Chart.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.CollectionPlus.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ColorSymbolRotator.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.CurveItem+Comparer.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.CurveItem.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.CurveList.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.DataPoint.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.DataSourcePointList.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.EllipseObj.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ErrorBar+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ErrorBar.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ErrorBarItem.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Fill+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Fill.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.FilteredPointList.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.FontSpec+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.FontSpec.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.GapLabel+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.GapLabel.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.GasGaugeNeedle+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.GasGaugeNeedle.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.GasGaugeRegion+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.GasGaugeRegion.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.GraphObj+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.GraphObj.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.GraphObjList.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.GraphPane+AxisChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.GraphPane+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.GraphPane.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.HiLowBarItem.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.HSBColor.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ImageObj+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ImageObj.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.IPointList.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.IPointListEdit.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.IValuesToolTip.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.JapaneseCandleStick+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.JapaneseCandleStick.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.JapaneseCandleStickItem.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Label.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Legend+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Legend.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Line+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Line.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.LineBase+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.LineBase.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.LineItem.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.LineObj.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Link.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Location.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.MajorGrid+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.MajorGrid.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.MajorTic+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.MajorTic.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Margin+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Margin.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.MasterPane+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.MasterPane.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.MinorGrid+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.MinorGrid.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.MinorTic+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.MinorTic.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.NoDupePointList.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.OHLCBar+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.OHLCBar.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.OHLCBarItem.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.PaneBase+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.PaneBase.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.PaneList.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.PerformanceData.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.PieItem+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.PieItem.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.PointD.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.PointPair+PointPairComparer.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.PointPair+PointPairComparerY.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.PointPair.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.PointPair4.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.PointPairBase.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.PointPairCV.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.PointPairList.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.PolyObj.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.RadarPointList.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.RollingPointPairList.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Sample.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.SampleMultiPointList.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.SamplePointList.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Scale+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Scale.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ScaleState.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ScaleStateList.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ScrollRange.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ScrollRangeList.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Selection.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.StickItem.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.StockPointList.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.StockPt.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Symbol+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Symbol.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.TextObj+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.TextObj.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ValueHandler.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ValuesToolTip.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.X2Axis+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.X2Axis.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.XAxis+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.XAxis.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.XDate.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Y2Axis+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Y2Axis.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.Y2AxisList.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.YAxis+Default.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.YAxis.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.YAxisList.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ZedGraphControl+ContextMenuBuilderEventHandler.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ZedGraphControl+ContextMenuObjectState.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ZedGraphControl+CursorValueHandler.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ZedGraphControl+LinkEventHandler.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ZedGraphControl+PointEditHandler.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ZedGraphControl+PointValueHandler.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ZedGraphControl+ScrollDoneHandler.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ZedGraphControl+ScrollProgressHandler.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ZedGraphControl+ZedMouseEventHandler.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ZedGraphControl+ZoomEventHandler.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ZedGraphControl.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ZedGraphException.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ZoomState+StateType.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ZoomState.datasource" />
+    <None Include="Properties\DataSources\ZedGraph.ZoomStateStack.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="systemIcon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

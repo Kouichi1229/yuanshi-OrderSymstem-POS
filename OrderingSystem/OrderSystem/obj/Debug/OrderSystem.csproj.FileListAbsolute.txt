@@ -1,0 +1,2 @@
+c:\users\lenovo\documents\visual studio 2015\Projects\A104221219_A106222041\OrderSystem\bin\Debug\OrderSystem.exe.config
+E:\程式設計二\A104221219_A106222041\OrderSystem\bin\Debug\OrderSystem.exe.config

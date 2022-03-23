@@ -1,0 +1,71 @@
+import socket, select, sys
+if(len(sys.argv) < 4) :
+print ('Usage : python selectClient.py hostname port name')
+print ('$ python3 selectClient.py 172.23.0.98 2020 Tom')
+sys.exit()
+host,port,uname = sys.argv[1],int(sys.argv[2]),sys.argv[3]
+mySocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+mySocket.settimeout(2)
+mySocket.connect((host, port))
+print ('Connected to remote host: ', uname)
+mySocket.send(uname.encode())
+sys.stdout.write('<'+uname+'> ')
+sys.stdout.flush()
+while True:
+inputSockets = [sys.stdin, mySocket]
+rlist, wlist, elist = select.select(inputSockets,[],[])
+for sock in rlist:
+if sock == mySocket : # 從伺服器收到資料
+data = sock.recv(4096).decode()
+if not data :
+print ('\nDisconnected from chat server')
+else:
+sys.stdout.write(data)
+else : # 從sysy.stdin收到資料
+msg = sys.stdin.readline()
+if ( msg == 'q\n' ):
+mySocket.close()
+msg = uname+'%'+msg # Tom%Hi 以%分隔用戶名與訊息
+mySocket.send(msg.encode())
+E:\程式設計二\A104221219_A106222041\OrderSystem\bin\Debug\OrderSystem.exe.config
+E:\程式設計二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.exe
+E:\程式設計二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.pdb
+E:\程式設計二\A104221219_A106222041\OrderSystem\bin\Debug\OrderSystem.exe
+E:\程式設計二\A104221219_A106222041\OrderSystem\bin\Debug\OrderSystem.pdb
+E:\程式設計二\A104221219_A106222041\OrderSystem\bin\Debug\ZedGraph.dll
+E:\程式設計二\A104221219_A106222041\OrderSystem\obj\Debug\beverage.csprojResolveAssemblyReference.cache
+E:\程式設計二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.MainEntrace.resources
+E:\程式設計二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.ordering.resources
+E:\程式設計二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.ordering_v2.resources
+E:\程式設計二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.PerformanceManagement.resources
+E:\程式設計二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.Properties.Resources.resources
+E:\程式設計二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.SystemManagement.resources
+E:\程式設計二\A104221219_A106222041\OrderSystem\obj\Debug\beverage.csproj.GenerateResource.Cache
+D:\程式設計二\A104221219_A106222041\OrderSystem\bin\Debug\OrderSystem.exe.config
+D:\程式設計二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.exe
+D:\程式設計二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.pdb
+D:\程式設計二\A104221219_A106222041\OrderSystem\bin\Debug\OrderSystem.exe
+D:\程式設計二\A104221219_A106222041\OrderSystem\bin\Debug\OrderSystem.pdb
+D:\程式設計二\A104221219_A106222041\OrderSystem\bin\Debug\ZedGraph.dll
+D:\程式設計二\A104221219_A106222041\OrderSystem\obj\Debug\beverage.csprojResolveAssemblyReference.cache
+D:\程式設計二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.MainEntrace.resources
+D:\程式設計二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.ordering_v2.resources
+D:\程式設計二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.PerformanceManagement.resources
+D:\程式設計二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.Properties.Resources.resources
+D:\程式設計二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.SystemManagement.resources
+D:\程式設計二\A104221219_A106222041\OrderSystem\obj\Debug\beverage.csproj.GenerateResource.Cache
+H:\程式設計一二\A104221219_A106222041\OrderSystem\bin\Debug\OrderSystem.exe.config
+H:\程式設計一二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.exe
+H:\程式設計一二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.pdb
+H:\程式設計一二\A104221219_A106222041\OrderSystem\bin\Debug\OrderSystem.exe
+H:\程式設計一二\A104221219_A106222041\OrderSystem\bin\Debug\OrderSystem.pdb
+H:\程式設計一二\A104221219_A106222041\OrderSystem\obj\Debug\beverage.csprojResolveAssemblyReference.cache
+H:\程式設計一二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.MainEntrace.resources
+H:\程式設計一二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.ordering_v2.resources
+H:\程式設計一二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.PerformanceManagement.resources
+H:\程式設計一二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.Properties.Resources.resources
+H:\程式設計一二\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.SystemManagement.resources
+H:\程式設計一二\A104221219_A106222041\OrderSystem\obj\Debug\beverage.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\實習作品\A104221219_A106222041\OrderSystem\bin\Debug\OrderSystem.exe.config
+C:\Users\user\Desktop\實習作品\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.exe
+C:\Users\user\Desktop\實習作品\A104221219_A106222041\OrderSystem\obj\Debug\OrderSystem.pdb
